@@ -1,0 +1,19 @@
+class Solution:
+    def tribonacci(self, n: int) -> int:
+        t  = deque()
+        t.append(0)
+        t.append(1)
+        t.append(1)
+
+
+
+        if n<3:
+            return t[n]
+
+        for i in range(2,n):
+            print(t)
+            t0 = t.popleft()
+            t.append(t0+t[0]+t[1])
+
+        print(t[2])
+        return t[2]
